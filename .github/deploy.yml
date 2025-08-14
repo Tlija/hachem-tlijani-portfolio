@@ -1,27 +1,43 @@
-name: Deploy to GH Pages
+name: Deploy to GitHub Pages
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"] # Adjust to your branch name if needed
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: '20'
+          cache: 'npm'
 
-      # Installer ShellCheck si besoin
+      # Install ShellCheck (optional, remove if not needed)
       - name: Install ShellCheck
-        run: sudo apt-get update && sudo apt-get install -y shellcheck
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y shellcheck
+        continue-on-error: true
 
-      - run: npm ci --legacy-peer-deps
-      - run: npm run build
-      - run: cp dist/index.html dist/404.html
+      - name: Verify ShellCheck
+        run: shellcheck --version
+        continue-on-error: true
 
-      - uses: peaceiris/actions-gh-pages@v3
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Build project
+        run: npm run build
+
+      - name: Copy index.html to 404.html
+        run: cp dist/index.html dist/404.html
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.TOKEN }}  # Utiliser un secret sécurisé
-          publish_dir: dist
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
