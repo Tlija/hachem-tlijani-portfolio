@@ -6,7 +6,7 @@ import {
   angular,
   backend,
   cofat,
-  comar,
+  tunisieTelecom,
   creator,
   css,
   firebase,
@@ -14,14 +14,17 @@ import {
   git,
   githubBlack,
   html,
-  javascript, mobile,
+  javascript,
+  mobile,
   mongodb,
   nodejs,
   ont,
   reactjs,
   tailwind,
   typescript,
+  frelance,
   web,
+  scope_concepts,
 } from "../assets";
 
 export const navLinks = [
@@ -93,16 +96,20 @@ const technologies = [
   {
     name: "git",
     icon: git,
-  }, {
+  },
+  {
     name: "Flutter",
     icon: flutter,
-  }, {
+  },
+  {
     name: "Firebase",
     icon: firebase,
-  },{
+  },
+  {
     name: "Angular",
     icon: angular,
-  },{
+  },
+  {
     name: "Github",
     icon: githubBlack,
   },
@@ -110,50 +117,53 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Information Technology Intern",
-    company_name: "Assurances COMAR et HAYETT",
-    icon: comar,
+    title: "Network Technician Intern",
+    company_name: "Tunisie Télécom",
+    icon: tunisieTelecom,
     iconBg: "#fff",
-    date: "June 2020 - August 2020",
+    date: "June 2018 - August 2019",
     points: [
-      "Diagnosed and resolved PC and network issues for employees, ensuring minimal downtime and efficient operations.",
-      "Provided timely technical assistance and support to address hardware, software, and connectivity concerns.",
-      "Collaborated with team members to implement effective solutions and improve system performance.",
-      "Conducted system upgrades and maintenance, enhancing overall functionality and user experience.",
+      "Analyzed and assessed network security by simulating realistic scenarios using Cisco Packet Tracer and GNS3, enhancing infrastructure resilience. (Tools: Cisco Packet Tracer, GNS3)",
+      "Designed and deployed virtualized network environments to test and optimize security policies and configurations, ensuring robust performance. (Tools: VMware, VirtualBox, Cisco Packet Tracer)",
+      "Configured and optimized firewalls to protect networks from unauthorized access and cyber threats, improving overall security. (Tools: Cisco ASA, pfSense, Firewalls)",
+      "Implemented VLAN segmentation and access control lists (ACL) to optimize network security and performance, reducing intrusion risks. (Tools: Cisco Switches, VLAN, ACL)",
+      "Deployed and secured static and dynamic routing using protocols such as OSPF and EIGRP, ensuring secure data transmission and reliable connectivity. (Tools: Cisco Routers, OSPF, EIGRP)",
     ],
   },
+
   {
     title: "Software Developer Intern",
-    company_name: "COFAT Group",
-    icon: cofat,
+    company_name: "Tunisie Télécom",
+    icon: tunisieTelecom,
     iconBg: "#fff",
     date: "June 2021 - August 2021",
     points: [
-      "Contributed to the creation and enhancement of the company's stock management application, ensuring improved functionality and user experience..",
-      "Collaborated with the development team to implement new features and optimize application performance.",
-      "Gained hands-on experience with software development processes, including design, coding, and testing.",
-      "Strengthened coding skills by working on real-world projects in a professional environment.",
+      "Designed and developed an Intrusion Detection System (IDS) based on Deep Learning to identify and neutralize cyber threats in real time. (Tools: Python, TensorFlow, Keras)",
+      "Developed and optimized AI models, including Convolutional Neural Networks (CNN), for real-time network traffic analysis and anomaly detection. (Tools: CNN)",
+      "Collected and preprocessed network traffic datasets (e.g., KDD99) to improve model training accuracy. (Tools: Python, Pandas, NumPy)",
+      "Conducted penetration testing and security audits to assess system vulnerabilities and ensure resilience against cyberattacks. (Tools: Kali Linux)",
+      "Documented research findings and technical implementation, delivering presentations to both academic and industry professionals. (Tools: LaTeX, Microsoft Office, PowerPoint)",
     ],
   },
   {
-    title: "Web Developer Intern",
-    company_name: "National Office of Broadcasting ",
-    icon: ont,
+    title: "Remote Freelance Software Engineer (Angular - MongoDB)",
+    company_name: "Self-Employed",
+    icon: frelance,
     iconBg: "#fff",
-    date: "March 2022 - June 2022",
+    date: "January 2022 – March 2023",
     points: [
-      "Led the development of a web application to transition the office's workflow from paper-based methods to a digital platform.",
-      "Designed and implemented user-friendly interfaces to enhance usability and accessibility.",
-      "Integrated secure data storage solutions and optimized performance for seamless operation.",
-      "Gained valuable experience in translating real-world needs into innovative digital solutions, refining web development and problem-solving skills.",
+      "Created custom, high-performance websites for SMEs and startups with a strong focus on user experience, accessibility, and performance. (Tech: HTML, CSS, JavaScript, React.js, UI/UX Design)",
+      "Delivered static and dynamic web projects in collaboration with companies across various sectors, featuring custom APIs. (Tech: Node.js, Express, Java, REST API, SSR)",
+      "Implemented NoSQL and real-time databases for secure and scalable management solutions. (Tech: Firebase, Firestore, MongoDB, Authentication, Realtime DB)",
+      "Automated deployments via CI/CD, optimized web performance, and configured cloud hosting environments. (Tech: GitHub Actions, Netlify, Render, Firebase Hosting, Lighthouse)",
     ],
   },
   {
     title: "Web and Mobile Developer ",
-    company_name: "AIBS ASSURANCES",
+    company_name: "Karma solution",
     icon: aibs,
     iconBg: "#0063ce",
-    date: "October 2022 - Present",
+    date: "March 2023 - Present",
     points: [
       "Developing and maintaining web applications using Angular and other related technologies.",
       "Build and sustain high-performance mobile applications utilizing Flutter and associated frameworks",
@@ -194,7 +204,8 @@ const testimonials = [
 const projects = [
   {
     name: "AIBS Assurance",
-    description:"A web platform designed for an insurance company, enabling users to seamlessly manage their insurance needs. The website allows users to purchase insurance, file claims for problems or issues, and access a range of services in a user-friendly and efficient manner.",
+    description:
+      "A web platform designed for an insurance company, enabling users to seamlessly manage their insurance needs. The website allows users to purchase insurance, file claims for problems or issues, and access a range of services in a user-friendly and efficient manner.",
     tags: [
       {
         name: "HTML",
@@ -209,12 +220,13 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: aibsAssurance ,
+    image: aibsAssurance,
     source_code_link: "https://www.aibs-assurances.fr/",
   },
   {
     name: "AIBS Partenaire",
-    description:'A web application designed to empower users in managing their insurance needs while offering a unique profit-sharing model. Users can purchase insurance for themselves or others, earning a profit for each policy bought. The platform also enables users to file claims for issues and seamlessly cash out their earned profits, providing a comprehensive and rewarding insurance experience.',
+    description:
+      "A web application designed to empower users in managing their insurance needs while offering a unique profit-sharing model. Users can purchase insurance for themselves or others, earning a profit for each policy bought. The platform also enables users to file claims for issues and seamlessly cash out their earned profits, providing a comprehensive and rewarding insurance experience.",
     tags: [
       {
         name: "Firebase",
@@ -234,7 +246,8 @@ const projects = [
   },
   {
     name: "AIBS Partenaire mobile",
-    description:'A cross-platform mobile app offering seamless functionality as AIBS Partenaire, enabling users to manage insurance, file claims, earn profits, and cash out rewards conveniently.',
+    description:
+      "A cross-platform mobile app offering seamless functionality as AIBS Partenaire, enabling users to manage insurance, file claims, earn profits, and cash out rewards conveniently.",
     tags: [
       {
         name: "Firebase",
@@ -246,9 +259,34 @@ const projects = [
       },
     ],
     image: aibsMobile,
-    source_code_link: "https://play.google.com/store/apps/details?id=com.sg.aibs_partenaire_mobile&hl=fr&pli=1",
+    source_code_link:
+      "https://play.google.com/store/apps/details?id=com.sg.aibs_partenaire_mobile&hl=fr&pli=1",
   },
-
+  {
+    name: "scope-concepts ",
+    description:
+      "A showcase website for the Saudi Arabian company Scope Concepts, presenting its portfolio of work and allowing visitors to get in touch via email or WhatsApp to request quotes.",
+    tags: [
+      {
+        name: "Html",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Css",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Javascript",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "Bootstrap",
+        color: "green-text-gradient",
+      },
+    ],
+    image: scope_concepts,
+    source_code_link: "https://scope-concepts.com/",
+  },
 ];
 
 export { services, technologies, experiences, testimonials, projects };
