@@ -1,0 +1,31 @@
+name: Deploy to GH Pages
+on:
+  push:
+    branches: [ "main" ] # Déclenchement sur chaque push dans main
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Récupérer le code
+      - uses: actions/checkout@v4
+
+      # 2. Installer Node.js
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # 3. Installer les dépendances
+      - run: npm ci --legacy-peer-deps
+
+      # 4. Construire le projet
+      - run: npm run build
+
+      # 5. Ajouter un fallback pour éviter erreur 404 sur SPA
+      - run: cp dist/index.html dist/404.html
+
+      # 6. Déployer sur gh-pages
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ env.TOKEN }}
+          publish_dir: dist
